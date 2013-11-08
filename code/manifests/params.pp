@@ -10,7 +10,7 @@ class xrootd::params {
 
     $exports = undef
 
-    $daemon_corefile_limit = undef
+    $daemon_corefile_limit = "unlimited"
 
     $sysconfigfile = "/etc/sysconfig/xrootd"
     $sysconfigfile_template = "xrootd/sysconfig.erb"
