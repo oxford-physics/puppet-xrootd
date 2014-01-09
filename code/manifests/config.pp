@@ -10,6 +10,12 @@ class xrootd::config (
 
   include fetchcrl
 
+  exec {"run-fetchcrl-atleastonce":
+    command     => "fetch-crl",
+    environment => "/bin:usr/bin:/sbin:/usr/sbin",
+    unless      => "ls /etc/grid-security/certificates/*.r0"
+  }
+
   if $::architecture == "x86_64" {
     $xrdlibdir = "lib64"
   } else {
