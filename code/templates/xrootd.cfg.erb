@@ -1,5 +1,5 @@
 <% if @setenv -%>
-<% @setenv.each do |key,val| -%>
+<% @setenv.sort.each do |key,val| -%>
 setenv <%= key %>=<%= val %>
 <% end -%>
 <% end -%>
@@ -25,7 +25,7 @@ all.sitename <%= @all_sitename %>
 oss.localroot <%= @oss_localroot %>
 <% end -%>
 <% if @all_export -%>
-<% @all_export.each do |export| -%>
+<% @all_export.sort.each do |export| -%>
 all.export <%= File.join(export,"") %>
 <% end -%>
 <% end -%>
@@ -50,7 +50,7 @@ xrootd.async <%= @xrootd_async %>
 if exec xrootd
 xrootd.seclib <%= @xrootd_seclib %>
 <% if @sec_protocol -%>
-<% @sec_protocol.each do |secprot| -%>
+<% @sec_protocol.sort.each do |secprot| -%>
 sec.protocol <%= secprot %>
 <% end -%>
 <% end -%>
@@ -58,7 +58,7 @@ sec.protocol <%= secprot %>
 xrootd.redirect <%= @xrootd_redirect %>
 <% end -%>
 <% if @xrootd_export -%>
-<% @xrootd_export.each do |export| -%>
+<% @xrootd_export.sort.each do |export| -%>
 xrootd.export <%= File.join(export,"") %>
 <% end -%>
 <% end -%>
@@ -103,7 +103,7 @@ ofs.osslib <%= @cmsd_ofsosslib %>
 pss.origin <%= @pss_origin %>
 <% end -%>
 <% if @pss_setopt -%>
-<% @pss_setopt.each do |option| -%>
+<% @pss_setopt.sort.each do |option| -%>
 pss.setopt <%= option %>
 <% end -%>
 <% end -%>
